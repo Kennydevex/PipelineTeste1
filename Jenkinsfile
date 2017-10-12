@@ -3,19 +3,19 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'echo "Success!!"; exit 0'
+                sh 'echo "Success!!"; exit 1'
             }
         }
     }
     post {
         always {
-            echo 'This will always run'
+            echo 'Esta parte vai sempre ser executada'
         }
         success {
-            echo 'This will run only if successful'
+            echo 'Aqui vai ser executada se o build form bem sucedida'
         }
         failure {
-            echo 'This will run only if failed'
+            echo 'esta parte vai aparecer se o build falhar'
         }
         unstable {
             echo 'This will run only if the run was marked as unstable'
