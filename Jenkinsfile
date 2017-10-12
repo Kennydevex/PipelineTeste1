@@ -11,5 +11,15 @@ pipeline {
                 '''
             }
         }
+        stage('Test') {
+            steps {
+                sh 'echo "Testando o projeto determinantemente"'
+            }
+        }
+    }
+    post {
+        always {
+            junit 'build/reports/**/*.xml'
+        }
     }
 }
