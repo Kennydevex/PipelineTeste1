@@ -1,25 +1,10 @@
 pipeline {
-    agent any
+    agent { docker 'maven:3.3.3' }
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
-                sh 'echo "Hello World"'
                 sh 'mvn --version'
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
             }
-        }
-        stage('Test') {
-            steps {
-                sh 'echo "Testando o projeto determinantemente"'
-            }
-        }
-    }
-    post {
-        always {
-            junit 'build/reports/**/*.xml'
         }
     }
 }
