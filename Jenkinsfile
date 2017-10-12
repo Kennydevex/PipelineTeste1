@@ -15,7 +15,7 @@ pipeline {
             echo 'Aqui vai ser executada se o build form bem sucedida'
         }
         failure {
-            echo 'esta parte vai aparecer se o build falhar'
+            echo 'esta parte vai aparecer se o build falhar !!!!'
         }
         unstable {
             echo 'This will run only if the run was marked as unstable'
